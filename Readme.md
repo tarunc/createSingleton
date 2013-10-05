@@ -25,6 +25,8 @@ function createSingleton(cb) {
 };
 ```
 
+That's all! Feel free to incorporate it back into any of your JavaScript programs.
+
 ## Installation
 
 **NodeJS**

@@ -1,6 +1,6 @@
 {
   "name": "create-singleton",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An abstracted-away best practice way to construct singletons",
   "keywords": ["singleton", "best-practice", "abstraction"],
   "author": "Tarun Chaudhry <tarunc92@gmail.com>",

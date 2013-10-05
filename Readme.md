@@ -1,9 +1,65 @@
 
 # createSingleton
 
-  An abstracted-away best practice way to construct singletons
+  An abstracted-away best practice way to construct singletons.
 
-## License 
+  The Singleton pattern is thus known because it restricts instantiation of a class to a single object. Classically, the Singleton pattern can be implemented by creating a class with a method that creates a new instance of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object.
+
+  Singletons differ from static classes (or objects) as we can delay their initialization, generally because they require some information that may not be available during initialization time. They don't provide a way for code that is unaware of a previous reference to them to easily retrieve them. This is because it is neither the object or "class" that's returned by a Singleton, it's a structure. Think of how closured variables aren't actually closures - the function scope that provides the closure is the closure.
+
+  In JavaScript, Singletons serve as a shared resource namespace which isolate implementation code from the global namespace so as to provide a single point of access for functions.
+
+```javascript
+function createSingleton(cb) {
+  var args = Array.prototype.slice.call(arguments, 1);
+  var name = '__' + (cb.name || Math.random());
+
+  return function () {
+    if (arguments.callee[name]) {
+      return arguments.callee[name];
+    }
+    arguments.callee[name] = this;
+
+    cb.apply(this, args.length ? args : arguments);
+  };
+};
+```
+
+## Installation
+
+**NodeJS**
+`npm install --save create-singleton`
+
+or
+
+**Browser**
+Just include the `createSingleton.js` or `createSingleton.min.js`. It's umdjs compatible :)
+
+## Usage
+
+```javascript
+var createSingleton = require('create-singleton');
+
+var mySingleton = createSingleton(function mySingleton() {
+  // Describes my singleton class
+  var myPrivateVariable = 5;
+
+  this.myPublicFunction = function() {
+    // something cool happens
+  };
+});
+
+// Contrust the singleton class
+var myInstance1 = new mySingleton();
+
+// Later on
+
+var myInstance2 = new mySingleton();
+// This doesn't create a new instance of mySingleton but instead returns the same one
+// myInstance1 === myInstance2
+```
+
+## License
 
 (The MIT License)
 

@@ -28,11 +28,13 @@ function createSingleton(cb) {
 ## Installation
 
 **NodeJS**
+
 `npm install --save create-singleton`
 
 or
 
 **Browser**
+
 Just include the `createSingleton.js` or `createSingleton.min.js`. It's umdjs compatible :)
 
 ## Usage

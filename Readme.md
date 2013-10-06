@@ -56,7 +56,35 @@ var mySingleton = createSingleton(function mySingleton() {
 // Contrust the singleton class
 var myInstance1 = new mySingleton();
 
-// Later on
+// ~ Later on ~
+
+var myInstance2 = new mySingleton();
+// This doesn't create a new instance of mySingleton but instead returns the same one
+// So myInstance1 === myInstance2 is true
+```
+
+**Another Example**
+```javascript
+// File: a.js
+var createSingleton = require('create-singleton');
+
+functhin Singleton() {
+  // Do something
+}
+
+Singleton.prototype.myPublicFunction = function () {};
+
+module.exports = createSingleton(Singleton);
+
+// .....
+
+// File b.js
+var mySingleton = require('./a.js');
+
+// Contrust the singleton class
+var myInstance1 = new mySingleton();
+
+// ~ Later on ~
 
 var myInstance2 = new mySingleton();
 // This doesn't create a new instance of mySingleton but instead returns the same one

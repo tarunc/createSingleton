@@ -68,7 +68,7 @@ var myInstance2 = new mySingleton();
 // File: a.js
 var createSingleton = require('create-singleton');
 
-functhin Singleton() {
+function Singleton() {
   // Do something
 }
 

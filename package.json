@@ -1,11 +1,12 @@
 {
   "name": "create-singleton",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An abstracted-away best practice way to construct singletons",
   "keywords": ["singleton", "best-practice", "abstraction"],
-  "author": "Tarun Chaudhry <tarunc92@gmail.com>",
+  "author": "Tarun Chaudhry <opensource@chaudhry.co>",
   "repository": { "type": "git", "url": "git://github.com/tarunc/createSingleton.git" },
   "dependencies": {},
   "devDependencies": {},
-  "main": "index"
+  "main": "index.js",
+  "license": "MIT"
 }
